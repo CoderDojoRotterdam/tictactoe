@@ -13,8 +13,8 @@ var boxes = [];
 // Play area array
 var field = [0,0,0,0,0,0,0,0,0];
 
-// Player
-var player = "X";
+// Player -- 1 = X, 2 = O
+var player = 1;
 
 $(document).ready(function(){
 	
@@ -57,7 +57,7 @@ function drawfield(){
 function drawRectangle(x,y,w,h,id){
 
 	//Rectangle
-	var box = new PIXI.Graphics()
+	var box = new PIXI.Graphics();
 	
 	// Drawing the box
 	box.beginFill(0xFFFFFF);
@@ -83,15 +83,28 @@ function drawRectangle(x,y,w,h,id){
 		
 		console.log(this.id);
 		
-		if(player == "X"){
+		// Check if field already taken
+		if(field[this.id] != 1 && field[this.id] != 2){
+			
+			// Add player to field array
+			field[this.id] = player; 
+			
+			// Check who's turn is it and draw symbol and change player
+			if(player == 1){
 			
 			drawX(this.posx, this.posy);
-			player = "O";
+			player = 2;
 		
-		}else if(player == "O"){
+			}else if(player == 2){
+				
+				drawCircle(this.posx, this.posy);
+				player = 1;	
+			}
 			
-			drawCircle(this.posx, this.posy);
-			player = "X";	
+		}else{
+		
+			alert("Spot already taken!");
+		
 		}
 		
 		//Check the positions of the players
@@ -99,7 +112,8 @@ function drawRectangle(x,y,w,h,id){
 		console.log("["+field[3]+"]["+field[4]+"]["+field[5]+"]");
 		console.log("["+field[6]+"]["+field[7]+"]["+field[8]+"]");
 		console.log("------------------------------------------");
-	
+		
+		checkWin();
 	};
 	
 	//Add box to stage
@@ -130,22 +144,54 @@ function drawCircle(x, y){
 	var circleSymbol = new PIXI.Graphics();
 	
 	circleSymbol.lineStyle(2, 0x000000, 1);
-	//circleSymbol.beginFill(0x000000, 1);
 	circleSymbol.drawCircle( x + 50, y + 50, 30);
-	//circleSymbol.endFill();
 	
 	stage.addChild(circleSymbol);
 	
 }
 
+//Check winning condition
+function checkWin(){
+
+	//Player one
+	if(field[0] == 1 && field[1] == 1 && field[2] == 1){ drawWinLine(15,50,285,50, 1); return "True"; }
+	if(field[3] == 1 && field[4] == 1 && field[5] == 1){ drawWinLine(15,150,285,150, 1); return "True"; }
+	if(field[6] == 1 && field[7] == 1 && field[8] == 1){ drawWinLine(15,250,285,250, 1); return "True"; }
+	
+	if(field[0] == 1 && field[3] == 1 && field[6] == 1){ drawWinLine(50,15,50,285, 1); return "True"; }
+	if(field[1] == 1 && field[4] == 1 && field[7] == 1){ drawWinLine(150,15,150,285, 1); return "True"; }
+	if(field[2] == 1 && field[5] == 1 && field[8] == 1){ drawWinLine(250,15,250,285, 1); return "True"; }
+	
+	if(field[0] == 1 && field[4] == 1 && field[8] == 1){ drawWinLine(25,25,275,275, 1); return "True"; }
+	if(field[2] == 1 && field[4] == 1 && field[6] == 1){ drawWinLine(275,25,25,275, 1); return "True"; }
+	
+	//Player Two
+	if(field[0] == 2 && field[1] == 2 && field[2] == 2){ drawWinLine(15,50,285,50, 2); return "True"; }
+	if(field[3] == 2 && field[4] == 2 && field[5] == 2){ drawWinLine(15,150,285,150, 2); return "True"; }
+	if(field[6] == 2 && field[7] == 2 && field[8] == 2){ drawWinLine(15,250,285,250, 2); return "True"; }
+	
+	if(field[0] == 2 && field[3] == 2 && field[6] == 2){ drawWinLine(50,15,50,285, 2); return "True"; }
+	if(field[1] == 2 && field[4] == 2 && field[7] == 2){ drawWinLine(150,15,150,285, 2); return "True"; }
+	if(field[2] == 2 && field[5] == 2 && field[8] == 2){ drawWinLine(250,15,250,285, 2); return "True"; }
+	
+	if(field[0] == 2 && field[4] == 2 && field[8] == 2){ drawWinLine(25,25,275,275, 2); return "True"; }
+	if(field[2] == 2 && field[4] == 2 && field[6] == 2){ drawWinLine(275,25,25,275, 2); return "True"; }
+	
+	return false;
+	
+}
+
 // Drawing the winning line
-function drawWinLine(){
+function drawWinLine(startX, startY, endX, endY, player){
 
 	var winLine = new PIXI.Graphics();
 	
 	winLine.lineStyle(2, 0x000000, 1);
+	winLine.moveTo( startX, startY);
+	winLine.lineTo( endX , endY);
 	
-	winLine.moveTo( 10, 50);
-	winLine.lineTo( 300 , 50);
-
+	stage.addChild(winLine);
+	
+	alert("Player " + player + " WON!!!!");
+	
 }
