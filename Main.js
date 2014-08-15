@@ -11,7 +11,7 @@ var renderer = PIXI.autoDetectRenderer(300, 300);
 var boxes = [];
 
 // Play area array
-var field = [0,0,0,0,0,0,0,0,0];
+var field = [];
 
 // Player -- 1 = X, 2 = O
 var player = 1;
@@ -25,7 +25,7 @@ $(document).ready(function(){
 	drawfield();
 	
 	// Call the frame looper
-	requestAnimFrame(animate);
+	animate();
 	
 });
 
@@ -39,6 +39,9 @@ function animate() {
 }
 
 function drawfield(){
+
+	field = [0,0,0,0,0,0,0,0,0];
+
 	// Playing field
 	boxes[0] = drawRectangle(0, 0, 100, 100, 0);
 	boxes[1] = drawRectangle(100, 0, 100, 100, 1);
@@ -80,7 +83,7 @@ function drawRectangle(x,y,w,h,id){
 	
 	//Give the box a click handler
 	box.click = function(data){
-		
+
 		console.log(this.id);
 		
 		// Check if field already taken
@@ -103,7 +106,7 @@ function drawRectangle(x,y,w,h,id){
 			
 		}else{
 		
-			alert("Spot already taken!");
+			// alert("Spot already taken!");
 		
 		}
 		
@@ -154,28 +157,28 @@ function drawCircle(x, y){
 function checkWin(){
 
 	//Player one
-	if(field[0] == 1 && field[1] == 1 && field[2] == 1){ drawWinLine(15,50,285,50, 1); return "True"; }
-	if(field[3] == 1 && field[4] == 1 && field[5] == 1){ drawWinLine(15,150,285,150, 1); return "True"; }
-	if(field[6] == 1 && field[7] == 1 && field[8] == 1){ drawWinLine(15,250,285,250, 1); return "True"; }
+	if(field[0] == 1 && field[1] == 1 && field[2] == 1){ drawWinLine(15,50,285,50, 1); return true; }
+	if(field[3] == 1 && field[4] == 1 && field[5] == 1){ drawWinLine(15,150,285,150, 1); return true; }
+	if(field[6] == 1 && field[7] == 1 && field[8] == 1){ drawWinLine(15,250,285,250, 1); return true; }
 	
-	if(field[0] == 1 && field[3] == 1 && field[6] == 1){ drawWinLine(50,15,50,285, 1); return "True"; }
-	if(field[1] == 1 && field[4] == 1 && field[7] == 1){ drawWinLine(150,15,150,285, 1); return "True"; }
-	if(field[2] == 1 && field[5] == 1 && field[8] == 1){ drawWinLine(250,15,250,285, 1); return "True"; }
+	if(field[0] == 1 && field[3] == 1 && field[6] == 1){ drawWinLine(50,15,50,285, 1); return true; }
+	if(field[1] == 1 && field[4] == 1 && field[7] == 1){ drawWinLine(150,15,150,285, 1); return true; }
+	if(field[2] == 1 && field[5] == 1 && field[8] == 1){ drawWinLine(250,15,250,285, 1); return true; }
 	
-	if(field[0] == 1 && field[4] == 1 && field[8] == 1){ drawWinLine(25,25,275,275, 1); return "True"; }
-	if(field[2] == 1 && field[4] == 1 && field[6] == 1){ drawWinLine(275,25,25,275, 1); return "True"; }
+	if(field[0] == 1 && field[4] == 1 && field[8] == 1){ drawWinLine(25,25,275,275, 1); return true; }
+	if(field[2] == 1 && field[4] == 1 && field[6] == 1){ drawWinLine(275,25,25,275, 1); return true; }
 	
 	//Player Two
-	if(field[0] == 2 && field[1] == 2 && field[2] == 2){ drawWinLine(15,50,285,50, 2); return "True"; }
-	if(field[3] == 2 && field[4] == 2 && field[5] == 2){ drawWinLine(15,150,285,150, 2); return "True"; }
-	if(field[6] == 2 && field[7] == 2 && field[8] == 2){ drawWinLine(15,250,285,250, 2); return "True"; }
+	if(field[0] == 2 && field[1] == 2 && field[2] == 2){ drawWinLine(15,50,285,50, 2); return true; }
+	if(field[3] == 2 && field[4] == 2 && field[5] == 2){ drawWinLine(15,150,285,150, 2); return true; }
+	if(field[6] == 2 && field[7] == 2 && field[8] == 2){ drawWinLine(15,250,285,250, 2); return true; }
 	
-	if(field[0] == 2 && field[3] == 2 && field[6] == 2){ drawWinLine(50,15,50,285, 2); return "True"; }
-	if(field[1] == 2 && field[4] == 2 && field[7] == 2){ drawWinLine(150,15,150,285, 2); return "True"; }
-	if(field[2] == 2 && field[5] == 2 && field[8] == 2){ drawWinLine(250,15,250,285, 2); return "True"; }
+	if(field[0] == 2 && field[3] == 2 && field[6] == 2){ drawWinLine(50,15,50,285, 2); return true; }
+	if(field[1] == 2 && field[4] == 2 && field[7] == 2){ drawWinLine(150,15,150,285, 2); return true; }
+	if(field[2] == 2 && field[5] == 2 && field[8] == 2){ drawWinLine(250,15,250,285, 2); return true; }
 	
-	if(field[0] == 2 && field[4] == 2 && field[8] == 2){ drawWinLine(25,25,275,275, 2); return "True"; }
-	if(field[2] == 2 && field[4] == 2 && field[6] == 2){ drawWinLine(275,25,25,275, 2); return "True"; }
+	if(field[0] == 2 && field[4] == 2 && field[8] == 2){ drawWinLine(25,25,275,275, 2); return true; }
+	if(field[2] == 2 && field[4] == 2 && field[6] == 2){ drawWinLine(275,25,25,275, 2); return true; }
 	
 	return false;
 	
@@ -191,7 +194,32 @@ function drawWinLine(startX, startY, endX, endY, player){
 	winLine.lineTo( endX , endY);
 	
 	stage.addChild(winLine);
-	
-	alert("Player " + player + " WON!!!!");
-	
+
+
+	var winText = new PIXI.Text("Speler " + player + " wint!!!", {fill: "red"});
+	var bg = new PIXI.Graphics();
+	winText.x = 50;
+	winText.y = 150;
+
+	bg.beginFill(0x0000FF);
+	bg.drawRect(winText.x, winText.y, winText.width, winText.height);
+	bg.endFill();
+
+	stage.addChild(bg);
+	stage.addChild(winText);
+
+	boxes.forEach(function(box) {
+		box.click = null;
+	});
+
+
+
+	$('body').append('<img src="http://images.lingscars.com/images/header/webcams/chicken-ani.gif">')
+
+	setTimeout(function() { 
+		stage.children.forEach(function(child) {
+			stage.removeChild(child);
+		});
+		drawfield(); 
+	}, 2000);
 }
