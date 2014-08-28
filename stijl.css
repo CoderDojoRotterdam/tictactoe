@@ -1,0 +1,11 @@
+/* simpele reset */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+canvas {
+  display: block;
+  width: 300px;
+  margin: 100px auto;
+}
