@@ -17,7 +17,7 @@ CoderDojo Rotterdam
 
 ## cheatsheet
 
-Om een beetje af te kunnen kijken hoe bepaalde dingen in javascript geschreven moeten worden kan deze cheatsheet geraadpleegd worden.
+Om een beetje af te kunnen kijken hoe bepaalde dingen in JavaScript geschreven moeten worden kun je deze cheatsheet gebruiken. Want spieken mag! :D
 
 ### Variabelen
 
@@ -48,7 +48,7 @@ Soms wil je controleren of iets waar of niet waar is. Dit kan je doen met behulp
 
 Dit ziet er zo uit:
 
-    if(is dit waar) {
+    if(is dit waar?) {
       ja dit is waar
     } else {
       nee, dit is niet waar
