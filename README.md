@@ -19,13 +19,6 @@ CoderDojo Rotterdam
 
 We hebben het zware teken- en rekenwerk alvast voor je gedaan en verstopt in functies. Deze hoef je 'alleen nog maar' in de juiste volgorde uit te voeren. Hieronder een klein overzicht van de functies en wat ze doen.
 
-## tekenHetVeld();
-
-`Speelveld.tekenHetVeld();` tekent het speelveld op het scherm.
-
-* Deze functie geeft niets terug
-* Deze functie verwacht geen parameters
-
 ## wisselVanSpeler();
 
 `Speelveld.wisselVanSpeler();` geeft de beurt door aan de andere speler.
