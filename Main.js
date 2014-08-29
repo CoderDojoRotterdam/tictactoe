@@ -284,7 +284,6 @@ Speelveld.prototype.klik = function(vakje) {
 
 	}
 
-
 }
 
 $(document).ready(function() {
