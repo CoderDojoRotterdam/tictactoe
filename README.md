@@ -13,7 +13,8 @@ Dit is de uitgewerkte versie van het spel boter, kaas en eieren. Om het spel wer
           Beeindig het spel
           Benoem de winnaar
 
-        Anders is de andere speler weer aan de beurt
+        Anders 
+            De andere speler is weer aan de beurt
 
 ## cheatsheet
 
