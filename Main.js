@@ -266,24 +266,6 @@ Speelveld.prototype.tekenLijn = function(startX, startY, endX, endY) {
 
 Speelveld.prototype.klik = function(vakje) {
 
-	if(this.isDitVakjeNogVrij(vakje)) {
-
-		if (this.wieIsDeHuidigeSpeler() == 'x') {
-			this.tekenX(vakje);
-		}
-
-		if (this.wieIsDeHuidigeSpeler() == 'o') {
-			this.tekenO(vakje);
-		}
-
-		if(this.heeftErIemandGewonnen()) {
-			this.benoemWinnaar();
-		}
-
-		this.wisselVanSpeler();
-
-	}
-
 }
 
 $(document).ready(function() {
