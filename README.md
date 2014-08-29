@@ -1,7 +1,7 @@
-tictactoe
+Boter, kaas en eieren
 =========
 
-CoderDojo Rotterdam
+Dit is de uitgewerkte versie van het spel boter, kaas en eieren. Om het spel werkend te kunnen bekijken, open je index.html in een webbrowser (bijvoorbeeld Google Chrome). Het spel kan vervolgens gespeeld worden met de muis.
 
 ## Pseudo code
     Wanneer er op een veld geklikt is:
@@ -13,7 +13,8 @@ CoderDojo Rotterdam
           Beeindig het spel
           Benoem de winnaar
 
-        Anders is de andere speler weer aan de beurt
+        Anders 
+            De andere speler is weer aan de beurt
 
 # Te gebruiken functies
 
@@ -80,8 +81,9 @@ We hebben het zware teken- en rekenwerk alvast voor je gedaan en verstopt in fun
 `Speelveld.prototype.klik();` moet worden overschreven om daar de oplossing in te kunnen zetten. Dit is al gedaan in het bestand spel.js.
 
 # cheatsheet - javascript
+=======
 
-Om een beetje af te kunnen kijken hoe bepaalde dingen in javascript geschreven moeten worden kan deze cheatsheet geraadpleegd worden.
+Om een beetje af te kunnen kijken hoe bepaalde dingen in JavaScript geschreven moeten worden kun je deze cheatsheet gebruiken. Want spieken mag! :D
 
 ### Variabelen
 
@@ -112,7 +114,7 @@ Soms wil je controleren of iets waar of niet waar is. Dit kan je doen met behulp
 
 Dit ziet er zo uit:
 
-    if(is dit waar) {
+    if(is dit waar?) {
       ja dit is waar
     } else {
       nee, dit is niet waar
