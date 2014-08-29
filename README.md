@@ -16,7 +16,7 @@ Dit is de uitgewerkte versie van het spel boter, kaas en eieren. Om het spel wer
         Anders 
             De andere speler is weer aan de beurt
 
-## cheatsheet
+## Cheatsheet
 
 Om een beetje af te kunnen kijken hoe bepaalde dingen in JavaScript geschreven moeten worden kun je deze cheatsheet gebruiken. Want spieken mag! :D
 
