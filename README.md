@@ -80,7 +80,7 @@ We hebben het zware teken- en rekenwerk alvast voor je gedaan en verstopt in fun
 
 `Speelveld.prototype.klik();` moet worden overschreven om daar de oplossing in te kunnen zetten. Dit is al gedaan in het bestand spel.js.
 
-# cheatsheet - javascript
+# cheatsheet
 =======
 
 Om een beetje af te kunnen kijken hoe bepaalde dingen in JavaScript geschreven moeten worden kun je deze cheatsheet gebruiken. Want spieken mag! :D
