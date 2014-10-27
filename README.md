@@ -1,6 +1,8 @@
 Boter, kaas en eieren
 =========
 
+Live versie: http://coderdojorotterdam.github.io/tictactoe/
+
 Dit is de uitgewerkte versie van het spel boter, kaas en eieren. Om het spel werkend te kunnen bekijken, open je index.html in een webbrowser (bijvoorbeeld Google Chrome). Het spel kan vervolgens gespeeld worden met de muis.
 
 ## Pseudo code
